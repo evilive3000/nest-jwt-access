@@ -1,13 +1,13 @@
 {
   "name": "@evilive3000/nest-jwt-access",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "author": "evilive3000",
   "license": "UNLICENSED",
   "scripts": {
     "prepublish": "npm run build",
     "prebuild": "rimraf dist",
-    "build": "nest build",
+    "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
