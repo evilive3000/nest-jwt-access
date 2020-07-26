@@ -1,6 +1,6 @@
 {
   "name": "@evilive3000/nest-jwt-access",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "",
   "author": "evilive3000",
   "license": "UNLICENSED",
@@ -68,5 +68,9 @@
     "type": "git",
     "url": "https://github.com/evilive3000/nest-jwt-access"
   },
-  "types": "dist/index.d.ts"
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ]
 }

@@ -3,5 +3,8 @@ index.ts
 package-lock.json
 tslint.json
 tsconfig.json
+tsconfig.build.json
 .prettierrc
 .github
+.eslintrc.js
+.nest-cli.json
