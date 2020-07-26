@@ -64,5 +64,9 @@
     },
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evilive3000/nest-jwt-access"
   }
 }
