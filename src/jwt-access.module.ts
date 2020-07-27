@@ -1,12 +1,9 @@
 import { DynamicModule, Module, Provider } from '@nestjs/common';
 import { PassportModule } from '@nestjs/passport';
+import { StrategyOptions } from 'passport-jwt';
 import { JwtAccessStrategy } from './jwt-access.strategy';
 import { JWT_STRATEGY_OPTIONS } from './jwt-access.constants';
-import { StrategyOptions } from 'passport-jwt';
-import {
-  StrategyOptionsFactory,
-  ModuleAsyncOptions,
-} from './jwt-access.interfaces';
+import { StrategyOptionsFactory, ModuleAsyncOptions } from './jwt-access.interfaces';
 
 @Module({
   imports: [PassportModule],
@@ -32,15 +29,11 @@ export class JwtAccessModule {
     return {
       module: JwtAccessModule,
       imports: options.imports,
-      providers: options.useClass
-        ? [provider, options.useClass]
-        : [provider],
+      providers: options.useClass ? [provider, options.useClass] : [provider],
     };
   }
 
-  private static makeAsyncStrategyOptionsProvider(
-    options: ModuleAsyncOptions,
-  ): Provider {
+  private static makeAsyncStrategyOptionsProvider(options: ModuleAsyncOptions): Provider {
     if (!(options.useClass || options.useExisting || options.useFactory)) {
       throw new Error('Invalid JwtAccessModule options');
     }
@@ -55,7 +48,8 @@ export class JwtAccessModule {
 
     return {
       provide: JWT_STRATEGY_OPTIONS,
-      useFactory: async (factory: StrategyOptionsFactory): Promise<StrategyOptions> => factory.createJwtStrategyOptions(),
+      useFactory: async (factory: StrategyOptionsFactory): Promise<StrategyOptions> =>
+        factory.createJwtStrategyOptions(),
       inject: [options.useClass || options.useExisting],
     };
   }

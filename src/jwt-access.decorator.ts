@@ -1,6 +1,6 @@
 import { applyDecorators, SetMetadata, UseGuards } from '@nestjs/common';
-import { JwtRolesGuard } from './jwt-roles.guard';
 import { AuthGuard } from '@nestjs/passport';
+import { JwtRolesGuard } from './jwt-roles.guard';
 
 export function JwtAccess(...roles: string[]): any {
   if (roles.length) {

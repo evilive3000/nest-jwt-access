@@ -6,10 +6,7 @@ export class JwtRolesGuard implements CanActivate {
   constructor(private reflector: Reflector) {}
 
   canActivate(context: ExecutionContext): boolean {
-    const roles = this.reflector.get<Set<string>>(
-      'roles',
-      context.getHandler(),
-    );
+    const roles = this.reflector.get<Set<string>>('roles', context.getHandler());
 
     if (roles && roles.size) {
       const request = context.switchToHttp().getRequest();
