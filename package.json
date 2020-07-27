@@ -1,6 +1,6 @@
 {
   "name": "@evilive3000/nest-jwt-access",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Jwt Access Module",
   "author": "evilive3000",
   "scripts": {
