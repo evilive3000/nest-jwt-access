@@ -29,6 +29,7 @@ import { ExtractJwt } from 'passport-jwt';
 })
 export class AppModule {}
 ```
+read about `ExtractJwt` on [passportjs.org](http://www.passportjs.org/packages/passport-jwt/#extracting-the-jwt-from-the-request)
 
 With ConfigModule:
 ```typescript
